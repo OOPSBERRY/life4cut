@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import QRCode from 'qrcode'
+import logo from '../assets/logo.png'
 
 const SITE_URL = 'https://life4cut-two.vercel.app/'
 
@@ -29,7 +30,7 @@ export default function IntroScreen({ onNext }) {
 
       <div className="intro-fade-in">
         <div className="intro-body">
-          <h2 className="intro-title">교실 네컷</h2>
+          <img src={logo} alt="교실 네컷" className="intro-logo" />
           <p className="hint-text">우리 반 친구들과 함께 찍는 즉석 포토부스</p>
         </div>
         <button className="btn btn-primary btn-large" onClick={onNext}>

@@ -201,11 +201,10 @@ img {
   gap: 12px;
 }
 
-.intro-title {
-  font-family: 'Jua', sans-serif;
-  font-size: 56px;
-  font-weight: 400;
-  color: var(--accent);
+.intro-logo {
+  max-width: 320px;
+  width: 80%;
+  height: auto;
 }
 
 .qr-toggle-btn {
