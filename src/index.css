@@ -70,10 +70,9 @@ img {
   justify-content: space-between;
 }
 
-.app-title {
-  font-family: 'Jua', sans-serif;
-  font-size: 30px;
-  font-weight: 400;
+.app-title-logo {
+  height: 44px;
+  width: auto;
 }
 
 .step-indicator {

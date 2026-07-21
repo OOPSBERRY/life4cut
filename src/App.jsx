@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import logo from './assets/logo2.png'
 import IntroScreen from './components/IntroScreen'
 import FrameSelectScreen from './components/FrameSelectScreen'
 import CaptureScreen from './components/CaptureScreen'
@@ -28,7 +29,7 @@ function App() {
   return (
     <div className="app-shell">
       <header className="app-header">
-        <h1 className="app-title">📸 교실 네컷</h1>
+        <img src={logo} alt="교실 네컷" className="app-title-logo" />
         {step !== 'intro' && (
           <button className="btn btn-ghost" onClick={resetAll}>
             처음부터

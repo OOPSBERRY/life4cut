@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import QRCode from 'qrcode'
-import logo from '../assets/logo.png'
+import logo from '../assets/logo2.png'
 
 const SITE_URL = 'https://life4cut-two.vercel.app/'
 

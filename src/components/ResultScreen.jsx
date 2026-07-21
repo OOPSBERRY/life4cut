@@ -25,6 +25,14 @@ export default function ResultScreen({ resultImage, onRestart }) {
       <h2>완성!</h2>
       <img src={resultImage} alt="완성된 인생네컷" className="result-image" />
 
+      <p className="hint-text">
+        사진을 길게 눌러서 "이미지 다운로드" 또는 "사진에 저장"을 선택하면 태블릿 앨범에 바로
+        저장돼요.
+      </p>
+      <p className="hint-text">
+        완성된 사진을 꾹 눌러 이미지 복사를 누르세요. 그 다음 교실 게시판에 붙여넣기 하세요.
+      </p>
+
       {savedMsg && <p className="hint-text">{savedMsg}</p>}
 
       <div className="result-actions">
