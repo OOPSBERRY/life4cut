@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import QRCode from 'qrcode'
 
-const SITE_URL = 'https://life4cut-ifb0gp3ct-oopsberrys-projects.vercel.app/'
+const SITE_URL = 'https://life4cut-two.vercel.app/'
 
 export default function IntroScreen({ onNext }) {
   const [qrDataUrl, setQrDataUrl] = useState(null)
