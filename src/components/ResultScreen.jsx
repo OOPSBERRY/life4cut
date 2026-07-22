@@ -1,20 +1,18 @@
 import { useState } from 'react'
-import { saveDataUrlAsImage } from '../utils/saveImage'
+import { copyImageToClipboard } from '../utils/saveImage'
 
 export default function ResultScreen({ resultImage, onRestart }) {
   const [saving, setSaving] = useState(false)
   const [savedMsg, setSavedMsg] = useState(null)
 
-  async function handleSave() {
+  async function handleCopy() {
     setSaving(true)
     setSavedMsg(null)
     try {
-      const filename = `교실네컷_${Date.now()}.png`
-      const result = await saveDataUrlAsImage(resultImage, filename)
-      if (result.method === 'share') setSavedMsg('저장 완료! 사진 앱에서 확인해 보세요.')
-      else if (result.method === 'download') setSavedMsg('다운로드 폴더에 저장되었어요.')
+      await copyImageToClipboard(resultImage)
+      setSavedMsg('이미지가 복사됐어요! 게시판에 붙여넣기 해보세요.')
     } catch {
-      setSavedMsg('저장에 실패했어요. 다시 시도해 주세요.')
+      setSavedMsg('복사에 실패했어요. 사진을 길게 눌러 "이미지 복사"를 선택해 주세요.')
     } finally {
       setSaving(false)
     }
@@ -36,8 +34,8 @@ export default function ResultScreen({ resultImage, onRestart }) {
       {savedMsg && <p className="hint-text">{savedMsg}</p>}
 
       <div className="result-actions">
-        <button className="btn btn-primary btn-large" onClick={handleSave} disabled={saving}>
-          {saving ? '저장 중...' : '앨범에 저장하기'}
+        <button className="btn btn-primary btn-large" onClick={handleCopy} disabled={saving}>
+          {saving ? '복사 중...' : '이미지 복사하기'}
         </button>
         <button className="btn btn-ghost btn-large" onClick={onRestart}>
           다시 찍기
